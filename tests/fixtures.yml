@@ -1,0 +1,13 @@
+Education\Core\Model\Page:
+  test:
+    Title: 'Test Page'
+    URLSegment: 'test-page'
+Education\Core\Model\AbstractLinkObject:
+  internal:
+    Title: 'Quick Link'
+    InternalLink: '=>Education\Core\Model\Page.test'
+    Sort: 2
+  external:
+    Title: 'Google'
+    ExternalLink: 'google.com'
+    Sort: 1

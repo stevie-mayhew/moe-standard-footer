@@ -1,0 +1,7 @@
+---
+Name: education-standardfooter
+After: '#framework'
+---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - Education\StandardFooter\Extension\FooterSiteConfig
