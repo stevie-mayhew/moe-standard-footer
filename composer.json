@@ -19,6 +19,12 @@
             "dev-master": "1.x-dev"
         }
     },
+    "repositories": [
+    {
+        "type": "vcs",
+        "url": "git@bitbucket.org:education_nz/cwp-core.git",
+        "private": "true"
+    }],
     "scripts": {
         "lint": "phpcs src/ tests/",
         "lint-clean": "phpcbf src/ tests/"
