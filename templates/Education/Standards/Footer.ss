@@ -1,5 +1,5 @@
 <footer id="page-foot" role="contentinfo">
-    <% if TopLinksEnabled %>
+    <% if SiteConfig.TopLinksEnabled %>
     <div class="upper">
         <div class="wrapper">
             <% cached 'footer-upper', $SiteConfigCacheKey %>
@@ -44,7 +44,7 @@
         <div class="wrapper">
             <div class="inner">
                 <nav>
-                    <% if not TopLinksEnabled %>
+                    <% if not SiteConfig.TopLinksEnabled %>
                         <% with $SiteConfig %>
                             <% if $SocialMediaLinksFooter.Exists %>
                                 <p class="social-links">
