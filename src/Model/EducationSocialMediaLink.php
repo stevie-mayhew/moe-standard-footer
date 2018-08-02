@@ -5,6 +5,7 @@ namespace Education\Core\Model;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\Forms\DropdownField;
+use Education\StandardFooter\AbstractLinkObject;
 use Education\Core\Extension\SiteConfigableObjectExtension;
 
 class EducationSocialMediaLink extends AbstractLinkObject

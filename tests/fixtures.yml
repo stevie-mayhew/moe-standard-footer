@@ -2,7 +2,7 @@ Education\Core\Model\Page:
   test:
     Title: 'Test Page'
     URLSegment: 'test-page'
-Education\Core\Model\AbstractLinkObject:
+Education\StandardFooter\Model\AbstractLinkObject:
   internal:
     Title: 'Quick Link'
     InternalLink: '=>Education\Core\Model\Page.test'
