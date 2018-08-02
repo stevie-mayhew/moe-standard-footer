@@ -6,6 +6,13 @@ use SilverStripe\SiteConfig\SiteConfig;
 
 class EducationFooterLink extends AbstractLinkObject
 {
+    /**
+     * @config
+     *
+     * @var $top_links_enabled boolean
+     */
+    private static $top_links_enabled = true;
+
     private static $singular_name = 'Footer Link';
 
     private static $plural_name = 'Footer Links';

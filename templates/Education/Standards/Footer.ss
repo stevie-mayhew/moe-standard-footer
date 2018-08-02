@@ -1,4 +1,5 @@
 <footer id="page-foot" role="contentinfo">
+    <% if TopLinksEnabled %>
     <div class="upper">
         <div class="wrapper">
             <% cached 'footer-upper', $SiteConfigCacheKey %>
@@ -38,21 +39,36 @@
             <% end_cached %>
         </div> <!-- // end wrapper \\ -->
     </div> <!-- // end upper \\ -->
-
+    <% end_if %>
     <div class="lower">
         <div class="wrapper">
             <div class="inner">
                 <nav>
-                    <% if $EducationLandingPages %>
-                    <ul>
-                        <li><a href="$BaseHref">Home</a></li>
-                        <% loop $EducationLandingPages %>
-                            <% if $DisplayInMegaMenu || $ShowInDesktopPrimaryNav %>
-                                <li><a href="$Link" data-s="$URLSegment">$MenuTitle.XML</a></li>
+                    <% if not TopLinksEnabled %>
+                        <% with $SiteConfig %>
+                            <% if $SocialMediaLinksFooter %>
+                                <h3>Connect with us</h3>
+
+                                <p class="social-links">
+                                    <% loop $SocialMediaLinksFooter %>
+                                        <a href="$Link" title="$Title" target="_blank" class="$Type"><span>$Title</span></a>
+                                    <% end_loop %>
+
+                                    <% if $HasShield %>
+                                        <% include Education\Cwp\Includes\Shield %>
+                                    <% end_if %>
+                                </p>
+                            <% else %>
+                                <p class="social-links">&nbsp;</p>
                             <% end_if %>
+                        <% end_with %>
+                    <% end_if %>
+
+                    <ul>
+                        <% loop $Menu(1) %>
+                            <li><a href="$Link" data-s="$URLSegment">$MenuTitle.XML</a></li>
                         <% end_loop %>
                     </ul>
-                    <% end_if %>
 
                     <ul class="alt">
                         <% cached 'footer-lower', $SiteConfigCacheKey %>

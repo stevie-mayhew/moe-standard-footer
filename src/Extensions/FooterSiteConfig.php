@@ -12,6 +12,7 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Core\Config\Config;
 use Page;
 use Education\StandardFooter\Model\EducationFooterLink;
 use Education\StandardFooter\Model\EducationSocialMediaLink;
@@ -35,11 +36,16 @@ class FooterSiteConfig extends DataExtension
 
     public function updateCMSFields(FieldList $fields)
     {
+        if ($this->owner->getTopLinksEnabled()) {
+            $fields->addFieldsToTab('Root.Footer', [
+                TextField::create('UpperFooterLinkTitle', 'Header for links in upper footer'),
+                GridField::create('UpperFooterLinks', 'Upper', $this->owner->UpperFooterLinks(), GridFieldConfig_RecordEditor::create()
+                    ->addComponent(new GridFieldOrderableRows('SortOrder')))
+            ]);
+        }
+
         $fields->addFieldsToTab('Root.Footer', [
-            TextField::create('UpperFooterLinkTitle', 'Header for links in upper footer'),
-            TreeDropdownField::create('FooterLogoLinkID', 'Education logo link', SiteTree::class),
-            GridField::create('UpperFooterLinks', 'Upper', $this->owner->UpperFooterLinks(), GridFieldConfig_RecordEditor::create()
-                ->addComponent(new GridFieldOrderableRows('SortOrder'))),
+            TreeDropdownField::create('FooterLogoLinkID', 'Logo link', SiteTree::class),
             LiteralField::create('Br', '<hr style="margin-bottom: 20px" />'), // needed to stop grid fields running into each other
             GridField::create('LowerFooterLinks', 'Lower', $this->owner->LowerFooterLinks(), GridFieldConfig_RecordEditor::create()
                 ->addComponent(new GridFieldOrderableRows('SortOrder')))
@@ -59,12 +65,26 @@ class FooterSiteConfig extends DataExtension
         ]);
     }
 
+    /**
+     * @return boolean
+     */
+    public function getTopLinksEnabled()
+    {
+        return Config::inst()->get(EducationFooterLink::class, 'top_links_enabled');
+    }
+
+    /**
+     * @return SilverStripe\ORM\HasManyList
+     */
     public function SocialMediaLinks()
     {
         return $this->owner->getComponents('SocialMediaLinks')
             ->sort('SortOrder');
     }
 
+    /**
+     * @return SilverStripe\ORM\HasManyList
+     */
     public function SocialMediaLinksFooter()
     {
         return $this->owner->SocialMediaLinks()

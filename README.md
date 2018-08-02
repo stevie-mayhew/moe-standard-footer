@@ -24,10 +24,19 @@ Then you'll be good to go.
 
 ## Configuration
 
-The footer has several parts to be created and managed in the CMS.
+The footer has several parts to be created and managed in the CMS as per the 
+image above.
 
  - Upper Social Links (top left)
  - Upper Links (featured buttons top right)
  - Lower Links
+
+If you want, you can opt for a compressed version (i.e disabling the top links)
+by using the following configuration option
+
+```
+Education\StandardFooter\Model\EducationFooterLink:
+  top_links_enabled: false
+```
 
 
