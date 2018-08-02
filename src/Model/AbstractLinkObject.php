@@ -10,7 +10,7 @@ use SilverStripe\Control\Director;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\SiteConfig\SiteConfig;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
-use Education\Cwp\Extension\EducationSiteConfigableObjectExtension;
+use Education\Cwp\Extension\SiteConfigableObjectExtension;
 
 /**
  * All link object should extend from this class. This class provides basic
