@@ -84,14 +84,14 @@
                 </nav>
 
                 <div class="ministry-links">
-                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="resources/education/standard-footer/client/images/footer-moe-logo.png" alt="Ministry of Education." id="min-edu-logo"/></a></p>
+                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education/standard-footer:client/img/footer-moe-logo.png)" alt="Ministry of Education." id="min-edu-logo"/></a></p>
                 </div> <!-- // end ministry-links \\ -->
             </div> <!-- // end inner \\ -->
 
             <div class="copyright-line">
                 <p><% if CopyrightPage %><a href="$CopyrightPage.Link"><% end_if %>Copyright © New Zealand Ministry of Education<% if CopyrightPage %></a><% end_if %>. <strong><a href="#page-head-utilities">Back to top</a></strong></p>
                 <p id="nz-govt-footer-link">
-                    <a href="http://newzealand.govt.nz/"><img src="resources/education/standard-footer/client/images/footer-nz-govt-logo.png" alt="newzealand.govt.nz - connecting you to New Zealand central &amp; local government services" title="newzealand.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
+                    <a href="http://newzealand.govt.nz/"><img src="$resourceURL(education/standard-footer:client/img/footer-nz-govt-logo.png)" alt="newzealand.govt.nz - connecting you to New Zealand central &amp; local government services" title="newzealand.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
                 </p>
             </div>
         </div> <!-- // end wrapper \\ -->
