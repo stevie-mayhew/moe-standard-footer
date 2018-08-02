@@ -1,13 +1,10 @@
 <?php
 
-namespace Education\Core\Model;
+namespace Education\StandardFooter\Model;
 
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\OptionsetField;
 use SilverStripe\Forms\DropdownField;
-use Education\StandardFooter\Model\AbstractLinkObject;
-use Education\StandardFooter\Extension\EducationSiteConfigableObjectExtension;
-use Education\Core\Extension\SiteConfigableObjectExtension;
 
 class EducationSocialMediaLink extends AbstractLinkObject
 {
@@ -22,10 +19,6 @@ class EducationSocialMediaLink extends AbstractLinkObject
     ];
 
     private static $table_name = 'EducationSocialMediaLink';
-
-    private static $extensions = [
-        SiteConfigableObjectExtension::class
-    ];
 
     public function getCMSFields()
     {

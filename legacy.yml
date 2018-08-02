@@ -1,0 +1,8 @@
+---
+Name: footerlegacy
+---
+SilverStripe\ORM\DatabaseAdmin:
+  classname_value_remapping:
+    'Education\Core\Model\AbstractLinkObject': 'Education\StandardFooter\Model\AbstractLinkObject'
+    'Education\Core\Model\EducationFooterLink': 'Education\StandardFooter\Model\EducationFooterLink'
+    'Education\Core\Model\EducationSocialMediaLink': 'Education\StandardFooter\Model\EducationSocialMediaLink'
