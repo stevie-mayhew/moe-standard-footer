@@ -17,7 +17,7 @@ use Education\StandardFooter\Model\EducationFooterLink;
 use Education\StandardFooter\Model\EducationSocialMediaLink;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 
-class EducationSiteConfig extends DataExtension
+class FooterSiteConfig extends DataExtension
 {
     private static $db = [
         'UpperFooterLinkTitle' => 'Varchar(255)'

@@ -1,0 +1,346 @@
+/*
+  ==========================
+  footer
+  ==========================
+*/
+
+#page-foot {
+    font-family: 'petala_proregular';
+    font-size: 15px;
+    font-size: 1.5rem;
+}
+
+#page-foot .upper {
+    margin-top: 10px;
+    margin-top: 1rem;
+    padding: 20px 0 50px 0;
+    padding: 2rem 0 5rem 0;
+    background-color: #edede2;
+    color: #333333;
+}
+
+#page-foot .upper .inner > div {
+    float: left;
+    width: 24%;
+}
+
+#page-foot #footer-news-links {
+    width: 74.66%;
+    margin-left: 1.333%;
+}
+
+#page-foot .upper h3 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    margin-bottom: 14px;
+    margin-bottom: 1.4rem;
+}
+
+#page-foot .upper p + p {
+    margin-top: 6px;
+    margin-top: 0.6rem;
+}
+
+#footer-news-links ul {
+    list-style-type: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    -ms-column-count: 3;
+    column-count: 3;
+
+    -webkit-perspective: 1;
+}
+
+#footer-news-links ul li {
+    margin-bottom: 6px;
+    margin-bottom: 0.6rem;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+}
+
+/* lower area */
+/* ---------- */
+#page-foot .lower {
+    min-height: 200px;
+    min-height: 20rem;
+    padding: 40px 0;
+    padding: 4rem 0;
+    background-color: #373535;
+    font-size: 13px;
+    font-size: 1.3rem;
+    color: #CCC;
+}
+
+#page-foot p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#page-foot .lower .inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#page-foot .lower nav {
+    text-transform: uppercase;
+}
+
+#page-foot .lower nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#page-foot .lower nav ul.alt {
+    margin-top: 10px;
+    margin-top: 1rem;
+}
+
+#page-foot .lower nav ul li {
+    display: inline-block;
+}
+
+#page-foot .lower nav ul li + li:before {
+    content: ' – ';
+    opacity: 0.2;
+}
+
+#page-foot .lower nav a {
+    color: #CCC;
+}
+
+#page-foot .lower .ministry-links {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    text-align: right;
+    white-space: nowrap;
+    justify-content: flex-end;
+}
+
+#page-foot .lower .ministry-links > * {
+    display: block;
+    align-self: center;
+    justify-content: flex-end;
+}
+
+#page-foot .ministry-links > * + * {
+    margin-left: 30px;
+    margin-left: 3rem;
+}
+
+#moe-footer-link,
+#moe-footer-link a {
+    width: 159px;
+    width: 15.9rem;
+    height: 57px;
+    height: 5.7rem;
+}
+
+#moe-footer-link img {
+  transition: 0.2s ease-out;
+}
+
+#moe-footer-link a:hover img {
+  opacity: 0.8;
+}
+
+#nz-govt-footer-link,
+#nz-govt-footer-link a {
+    width: 160px;
+    width: 16rem;
+    height: 29px;
+    height: 2.9rem;
+
+    img {
+      max-width: 100%;
+      transition: 0.2s ease-out;
+    }
+}
+
+#nz-govt-footer-link a:hover img {
+  opacity: 0.8;
+}
+
+.copyright-line {
+  margin-top: 40px;
+  border-top: 1px solid #636161;
+  padding-top: 19px;
+
+  a {
+    color: inherit;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+/* general social links styling */
+/* ---------------------------- */
+#page-foot {
+  .link-button {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding: 8px 34px 8px 10px;
+    padding: 0.8rem 3.4rem 0.8rem 1rem;
+    border: solid 1px #CCC;
+    border: solid 0.1rem #CCC;
+    border-radius: 0.5rem;
+    background-color: #FFF;
+    font-family: 'petala_proregular';
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    color: #0066ff;
+    text-decoration: none;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:after {
+      content: '\f054';
+      position: absolute;
+      top: 9px;
+      top: 0.9rem;
+      right: 10px;
+      right: 1rem;
+      font-family: 'FontAwesome';
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #0066ff;
+      color: #FFF;
+    }
+  }
+
+  .social-links a {
+    display: inline-block;
+    width: 38px;
+    width: 3.8rem;
+    height: 38px;
+    height: 3.8rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: #FFF;
+    line-height: 38px;
+    line-height: 3.8rem;
+    color: #666666;
+    text-align: center;
+    text-decoration: none;
+
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  .social-links a span {
+      display: none;
+  }
+
+  .social-links a:before {
+      content: '';
+      display: inline;
+      font-family: 'FontAwesome';
+      font-size: 24px;
+      font-size: 2.4rem;
+      line-height: 1.66;
+  }
+
+  .social-links a:hover,
+  .social-links a:focus {
+      color: #FFF;
+      text-decoration: none;
+  }
+
+  .social-links a.fb:hover, .social-links a.fb:focus {
+      background-color: #3b5998 !important;
+  }
+
+  .social-links a.twtr:hover, .social-links a.twtr:focus {
+      background-color: #32a7d3 !important;
+  }
+
+  .social-links a.rss:hover, .social-links a.rss:focus {
+      background-color: #f88b02 !important;
+  }
+
+  .social-links a.lkin:hover, .social-links a.lkin:focus {
+      background-color: #0078b1 !important;
+  }
+
+  .social-links a.ggplus:hover, .social-links a.ggplus:focus {
+      background-color: #dc3e2e !important;
+  }
+
+  .social-links a.pint:hover, .social-links a.pint:focus {
+      background-color: #cb2027 !important;
+  }
+
+  .social-links a.email:hover, .social-links a.email:focus {
+      background-color: #bbca0c !important;
+  }
+
+  .social-links a.vmo:hover, .social-links a.vmo:focus {
+      background-color: #17aee1 !important;
+  }
+
+  .social-links a.ytb:hover, .social-links a.ytb:focus {
+      background-color: #cc181e !important;
+  }
+
+  .social-links a.fb:before {
+      content: '\f09a';
+  }
+
+  .social-links a.twtr:before {
+      content: '\f099';
+  }
+
+  .social-links a.rss:before {
+      content: '\f09e';
+  }
+
+  .social-links a.lkin:before {
+      content: '\f0e1';
+  }
+
+  .social-links a.ggplus:before {
+      content: '\f0d5';
+  }
+
+  .social-links a.pint:before {
+      content: '\f0d2';
+  }
+
+  .social-links a.email:before {
+      content: '\f0e0';
+  }
+
+  .social-links a.vmo:before {
+      content: '\f194';
+  }
+
+  .social-links a.ytb:before {
+      content: '\f16a';
+  }
+}
+
+@import "footer@1100px.scss";
+@import "footer@590px.scss";

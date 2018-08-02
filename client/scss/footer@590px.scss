@@ -1,0 +1,63 @@
+@media screen and (max-width: 590px) {
+  /*
+      ==========================
+      footer
+      ==========================
+    */
+
+    /* upper area */
+    /* ---------- */
+    #footer-news-links ul
+    {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      -ms-column-count: 1;
+      column-count: 1 ;
+    }
+
+    /* lower area */
+    /* ---------- */
+    #page-foot .lower
+    {
+      padding-top: 3rem;
+    }
+
+    #page-foot .lower nav ul.alt
+    {
+      display: block;
+    }
+
+    #page-foot .lower nav ul li {
+      display: block;
+      margin-bottom: 8px;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    #page-foot #nz-govt-footer-link {
+      margin-top: 20px;
+      margin-left: 0;
+    }
+    #page-foot .ministry-links > *,
+    #page-foot .lower .ministry-links > * + *
+    {
+      margin-top: 20px;
+      margin-left: 0;
+    }
+
+    #moe-footer-link,
+    #moe-footer-link a
+    {
+      width: 13.4rem;
+      height: 4.4rem;
+    }
+
+    #nz-govt-footer-link,
+    #nz-govt-footer-link a
+    {
+      width: 13.7rem;
+      height: 1.8rem;
+    }
+}
