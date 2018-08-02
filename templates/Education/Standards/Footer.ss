@@ -6,7 +6,7 @@
             <div class="inner cf">
                 <div>
                     <% with $SiteConfig %>
-                        <% if $SocialMediaLinksFooter %>
+                        <% if $SocialMediaLinksFooter.Exists %>
                             <h3>Connect with us</h3>
 
                             <p class="social-links">
@@ -46,9 +46,7 @@
                 <nav>
                     <% if not TopLinksEnabled %>
                         <% with $SiteConfig %>
-                            <% if $SocialMediaLinksFooter %>
-                                <h3>Connect with us</h3>
-
+                            <% if $SocialMediaLinksFooter.Exists %>
                                 <p class="social-links">
                                     <% loop $SocialMediaLinksFooter %>
                                         <a href="$Link" title="$Title" target="_blank" class="$Type"><span>$Title</span></a>

@@ -3,24 +3,24 @@
   footer
   ==========================
 */
-
 #page-foot {
     font-family: 'petala_proregular';
     font-size: 15px;
-    font-size: 1.5rem;
 
     .wrapper {
         margin: 0 auto;
         padding: 0 20px;
         max-width: 1160px;
     }
+
+    a {
+      text-decoration: none;
+    }
 }
 
 #page-foot .upper {
     margin-top: 10px;
-    margin-top: 1rem;
     padding: 20px 0 50px 0;
-    padding: 2rem 0 5rem 0;
     background-color: #edede2;
     color: #333333;
 }
@@ -37,14 +37,11 @@
 
 #page-foot .upper h3 {
     font-size: 18px;
-    font-size: 1.8rem;
     margin-bottom: 14px;
-    margin-bottom: 1.4rem;
 }
 
 #page-foot .upper p + p {
     margin-top: 6px;
-    margin-top: 0.6rem;
 }
 
 #footer-news-links ul {
@@ -63,7 +60,6 @@
 
 #footer-news-links ul li {
     margin-bottom: 6px;
-    margin-bottom: 0.6rem;
     -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -75,12 +71,9 @@
 /* ---------- */
 #page-foot .lower {
     min-height: 200px;
-    min-height: 20rem;
     padding: 40px 0;
-    padding: 4rem 0;
     background-color: #373535;
     font-size: 13px;
-    font-size: 1.3rem;
     color: #CCC;
 }
 
@@ -108,7 +101,6 @@
 
 #page-foot .lower nav ul.alt {
     margin-top: 10px;
-    margin-top: 1rem;
 }
 
 #page-foot .lower nav ul li {
@@ -141,15 +133,17 @@
 
 #page-foot .ministry-links > * + * {
     margin-left: 30px;
-    margin-left: 3rem;
 }
 
 #moe-footer-link,
 #moe-footer-link a {
     width: 159px;
-    width: 15.9rem;
     height: 57px;
-    height: 5.7rem;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
 }
 
 #moe-footer-link img {
@@ -163,9 +157,7 @@
 #nz-govt-footer-link,
 #nz-govt-footer-link a {
     width: 160px;
-    width: 16rem;
     height: 29px;
-    height: 2.9rem;
 
     img {
       max-width: 100%;
@@ -199,14 +191,10 @@
     display: inline-block;
     width: 100%;
     padding: 8px 34px 8px 10px;
-    padding: 0.8rem 3.4rem 0.8rem 1rem;
     border: solid 1px #CCC;
-    border: solid 0.1rem #CCC;
     border-radius: 0.5rem;
     background-color: #FFF;
-    font-family: 'petala_proregular';
     font-size: 18px;
-    font-size: 1.8rem;
     line-height: 1.2;
     color: #0066ff;
     text-decoration: none;
@@ -220,9 +208,7 @@
       content: '\f054';
       position: absolute;
       top: 9px;
-      top: 0.9rem;
       right: 10px;
-      right: 1rem;
       font-family: 'FontAwesome';
     }
 
@@ -236,16 +222,11 @@
   .social-links a {
     display: inline-block;
     width: 38px;
-    width: 3.8rem;
     height: 38px;
-    height: 3.8rem;
-    -webkit-border-radius: 0.5rem;
-    -moz-border-radius: 0.5rem;
     border-radius: 0.5rem;
     overflow: hidden;
     background-color: #FFF;
     line-height: 38px;
-    line-height: 3.8rem;
     color: #666666;
     text-align: center;
     text-decoration: none;
@@ -265,7 +246,6 @@
       display: inline;
       font-family: 'FontAwesome';
       font-size: 24px;
-      font-size: 2.4rem;
       line-height: 1.66;
   }
 
