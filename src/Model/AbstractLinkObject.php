@@ -42,7 +42,7 @@ class AbstractLinkObject extends DataObject
     ];
 
     private static $extensions = [
-        EducationSiteConfigableObjectExtension::class
+        SiteConfigableObjectExtension::class
     ];
 
     private static $default_sort = "SortOrder";
