@@ -109,9 +109,9 @@ class AbstractLinkObject extends DataObject
         }
 
         if (!$this->SiteConfigID) {
-			// ensure the link is attached to the most current page
-			$this->SiteConfigID = SiteConfig::current_site_config()->ID;
-		}
+            // ensure the link is attached to the most current page
+            $this->SiteConfigID = SiteConfig::current_site_config()->ID;
+        }
 
         parent::onBeforeWrite();
     }

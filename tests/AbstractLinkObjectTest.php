@@ -1,9 +1,9 @@
 <?php
 
-namespace Education\StandardsFooter\Tests;
+namespace Education\StandardFooter\Tests;
 
 use SilverStripe\Dev\SapphireTest;
-use Education\StandardsFooter\Model\AbstractLinkObject;
+use Education\StandardFooter\Model\AbstractLinkObject;
 use SilverStripe\Forms\FieldList;
 
 class AbstractLinkObjectTest extends SapphireTest
