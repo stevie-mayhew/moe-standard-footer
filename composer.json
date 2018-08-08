@@ -23,28 +23,8 @@
     "prefer-stable": true,
     "repositories": [
     {
-        "type": "vcs",
-        "url": "git@bitbucket.org:education_nz/cwp-core.git",
-        "private": "true"
-    }, {
-        "type": "vcs",
-        "url": "git@bitbucket.org:education_nz/google-analytics.git",
-        "private": "true"
-    },
-    {
-        "type": "vcs",
-        "url": "git@bitbucket.org:education_nz/tinymce-config.git",
-        "private": "true"
-    },
-    {
-        "type": "vcs",
-        "url": "git@bitbucket.org:education_nz/login-screen.git",
-        "private": "true"
-    },
-    {
-        "type": "vcs",
-        "url": "git@bitbucket.org:education_nz/tasker.git",
-        "private": "true"
+        "type": "composer",
+        "url": "https://packages.educationweb.services"
     }],
     "scripts": {
         "lint": "phpcs src/ tests/",

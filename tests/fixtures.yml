@@ -1,11 +1,11 @@
-Education\Core\Model\Page:
+SilverStripe\CMS\Model\SiteTree:
   test:
     Title: 'Test Page'
     URLSegment: 'test-page'
 Education\StandardFooter\Model\AbstractLinkObject:
   internal:
     Title: 'Quick Link'
-    InternalLink: '=>Education\Core\Model\Page.test'
+    InternalLink: '=>SilverStripe\CMS\Model\SiteTree.test'
     Sort: 2
   external:
     Title: 'Google'
