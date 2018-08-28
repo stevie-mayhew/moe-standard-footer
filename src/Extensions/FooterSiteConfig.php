@@ -12,6 +12,7 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\Core\Config\Config;
 use Page;
 use Education\StandardFooter\Model\EducationFooterLink;
@@ -36,23 +37,27 @@ class FooterSiteConfig extends DataExtension
 
     public function updateCMSFields(FieldList $fields)
     {
+        $config = GridFieldConfig_RecordEditor::create()
+            ->addComponent(new GridFieldOrderableRows('SortOrder'));
+
+        $delete = $config->getComponentByType(GridFieldDeleteAction::class);
+
+        if ($delete) {
+            $delete->setRemoveRelation(false);
+        }
+
         if ($this->owner->getTopLinksEnabled()) {
             $fields->addFieldsToTab('Root.Footer', [
                 TextField::create('UpperFooterLinkTitle', 'Header for links in upper footer'),
-                GridField::create('UpperFooterLinks', 'Upper', $this->owner->UpperFooterLinks(), GridFieldConfig_RecordEditor::create()
-                    ->addComponent(new GridFieldOrderableRows('SortOrder')))
+                GridField::create('UpperFooterLinks', 'Upper', $this->owner->UpperFooterLinks(), $config)
             ]);
         }
 
         $fields->addFieldsToTab('Root.Footer', [
             TreeDropdownField::create('FooterLogoLinkID', 'Logo link', SiteTree::class),
             LiteralField::create('Br', '<hr style="margin-bottom: 20px" />'), // needed to stop grid fields running into each other
-            GridField::create('LowerFooterLinks', 'Lower', $this->owner->LowerFooterLinks(), GridFieldConfig_RecordEditor::create()
-                ->addComponent(new GridFieldOrderableRows('SortOrder')))
+            GridField::create('LowerFooterLinks', 'Lower', $this->owner->LowerFooterLinks(), $config)
         ]);
-
-        $config = GridFieldConfig_RecordEditor::create()
-            ->addComponent(new GridFieldOrderableRows('SortOrder'));
 
         $fields->addFieldsToTab('Root.SocialMedia', [
             GridField::create(
