@@ -216,7 +216,9 @@
     line-height: 1.2;
     color: #0066ff;
     text-decoration: none;
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
     -ms-transition: all 0.3s;
