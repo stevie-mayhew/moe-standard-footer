@@ -53,11 +53,17 @@ class FooterSiteConfig extends DataExtension
             ]);
         }
 
+        $config = GridFieldConfig_RecordEditor::create()
+            ->addComponent(new GridFieldOrderableRows('SortOrder'));
+
         $fields->addFieldsToTab('Root.Footer', [
             TreeDropdownField::create('FooterLogoLinkID', 'Logo link', SiteTree::class),
             LiteralField::create('Br', '<hr style="margin-bottom: 20px" />'), // needed to stop grid fields running into each other
             GridField::create('LowerFooterLinks', 'Lower', $this->owner->LowerFooterLinks(), $config)
         ]);
+
+        $config = GridFieldConfig_RecordEditor::create()
+            ->addComponent(new GridFieldOrderableRows('SortOrder'));
 
         $fields->addFieldsToTab('Root.SocialMedia', [
             GridField::create(
