@@ -11,6 +11,7 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\SiteConfig\SiteConfig;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
 use Education\Cwp\Extension\SiteConfigableObjectExtension;
+use SilverStripe\ORM\FieldType\DBVarchar;
 
 /**
  * All link object should extend from this class. This class provides basic
@@ -38,7 +39,7 @@ class AbstractLinkObject extends DataObject
 
     private static $summary_fields = [
         'getTemplateTitle' => 'Link Text',
-        'getLink' => 'Link',
+        'Link' => 'Link',
     ];
 
     private static $extensions = [
@@ -125,16 +126,25 @@ class AbstractLinkObject extends DataObject
         }
     }
 
+    /**
+     * @return string
+     */
     public function Link()
     {
-        return $this->getLink();
+        return DBVarchar::create($this->getLink());
     }
 
+    /**
+     * @return string
+     */
     public function AbsoluteLink()
     {
         return $this->getTileAbsoluteLink();
     }
 
+    /**
+     * @return string
+     */
     public function getLink()
     {
         if ($this->ExternalLink && strlen($this->ExternalLink) > 0) {
@@ -144,6 +154,9 @@ class AbstractLinkObject extends DataObject
         }
     }
 
+    /**
+     * @return string
+     */
     public function getTileAbsoluteLink()
     {
         if ($this->ExternalLink && strlen($this->ExternalLink) > 0) {
