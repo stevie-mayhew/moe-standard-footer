@@ -11,7 +11,7 @@ use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\SiteConfig\SiteConfig;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
 use Education\Cwp\Extension\SiteConfigableObjectExtension;
-use SilverStripe\ORM\FieldType\DBVarchar;
+use SilverStripe\ORM\FieldType\DBField;
 
 /**
  * All link object should extend from this class. This class provides basic
@@ -131,7 +131,7 @@ class AbstractLinkObject extends DataObject
      */
     public function Link()
     {
-        return DBVarchar::create($this->getLink());
+        return DBField::create_field('Varchar', $this->getLink());
     }
 
     /**

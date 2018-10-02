@@ -20,9 +20,9 @@ class AbstractLinkObjectTest extends SapphireTest
     public function testGetLink()
     {
         $internal = $this->objFromFixture(AbstractLinkObject::class, 'internal');
-        $this->assertEquals('/test-page/', $internal->Link());
+        $this->assertEquals('/test-page/', $internal->Link()->getValue());
 
         $external = $this->objFromFixture(AbstractLinkObject::class, 'external');
-        $this->assertEquals('http://google.com', $external->Link());
+        $this->assertEquals('http://google.com', $external->Link()->getValue());
     }
 }

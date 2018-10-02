@@ -2,6 +2,7 @@ SilverStripe\CMS\Model\SiteTree:
   test:
     Title: 'Test Page'
     URLSegment: 'test-page'
+    ParentID: 0
 Education\StandardFooter\Model\AbstractLinkObject:
   internal:
     Title: 'Quick Link'
