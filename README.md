@@ -1,10 +1,18 @@
-# Education.govt.nz Standards - Footer.
+# Ministry of Education Standard Footer.
 
 This repository contains all the source code for the standard Ministry of 
 Education footer to avoid the need to rebuild the same markup and functionality
 between all the sites.
 
+Authors can remove logos and update all the copy on the text.
+
+Version 1:
+
 ![demo](client/img/demo.png)
+
+Version 2:
+
+<Insert Image>
 
 ## Usage
 
@@ -20,7 +28,7 @@ Your SCSS will also need to include the styles
 @import "../../vendor/education/standard-footer/client/scss/footer.scss"
 ```
 
-Then you'll be good to go.
+Then you'll be good to go. You can customize any of the colours, logos as you se fit.
 
 ## Configuration
 
