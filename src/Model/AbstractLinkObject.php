@@ -38,7 +38,7 @@ class AbstractLinkObject extends DataObject
     ];
 
     private static $summary_fields = [
-        'getTemplateTitle' => 'Link Text',
+        'Title' => 'Title',
         'Link' => 'Link',
     ];
 
