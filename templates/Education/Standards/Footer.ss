@@ -62,9 +62,13 @@
                     <% end_if %>
 
                     <ul>
-                        <% loop $Menu(1) %>
-                            <li><a href="$Link" data-s="$URLSegment">$MenuTitle.XML</a></li>
-                        <% end_loop %>
+                        <% with $SiteConfig %>
+                            <% if $UpperLowerFooterLinks %>
+                                <% loop $UpperLowerFooterLinks %>
+                                    <li><a href="$Link">$Title</a></li>
+                                <% end_loop %>
+                            <% end_if %>
+                        <% end_with %>
                     </ul>
 
                     <ul class="alt">
