@@ -31,6 +31,7 @@ class FooterSiteConfig extends DataExtension
 
     private static $has_many = [
         'UpperFooterLinks' => 'Education\StandardFooter\Model\EducationFooterLink.Upper',
+        'UpperLowerFooterLinks' => 'Education\StandardFooter\Model\EducationFooterLink.UpperLower',
         'LowerFooterLinks' => 'Education\StandardFooter\Model\EducationFooterLink.Lower',
         'SocialMediaLinks' => EducationSocialMediaLink::class
     ];
@@ -53,12 +54,16 @@ class FooterSiteConfig extends DataExtension
             ]);
         }
 
+        $upperconfig = GridFieldConfig_RecordEditor::create()
+            ->addComponent(new GridFieldOrderableRows('SortOrder'));
+
         $config = GridFieldConfig_RecordEditor::create()
             ->addComponent(new GridFieldOrderableRows('SortOrder'));
 
         $fields->addFieldsToTab('Root.Footer', [
             TreeDropdownField::create('FooterLogoLinkID', 'Logo link', SiteTree::class),
             LiteralField::create('Br', '<hr style="margin-bottom: 20px" />'), // needed to stop grid fields running into each other
+            GridField::create('UpperLowerFooterLinks', 'UpperLower', $this->owner->UpperLowerFooterLinks(), $upperconfig),
             GridField::create('LowerFooterLinks', 'Lower', $this->owner->LowerFooterLinks(), $config)
         ]);
 

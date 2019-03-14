@@ -21,7 +21,8 @@ class EducationFooterLink extends AbstractLinkObject
 
     private static $has_one = [
         'Upper' => SiteConfig::class,
-        'Lower' => SiteConfig::class
+        'Lower' => SiteConfig::class,
+        'UpperLower' => SiteConfig::class
     ];
 
     public function getCMSFields()
