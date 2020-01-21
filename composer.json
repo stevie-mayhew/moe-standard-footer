@@ -9,7 +9,7 @@
         }
     },
     "require": {
-        "education/cwp-core": "^1"
+        "education/cwp-core": "^2"
     },
     "extra": {
         "expose": [
