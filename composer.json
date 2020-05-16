@@ -21,11 +21,6 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "repositories": [
-    {
-        "type": "composer",
-        "url": "https://packages.educationweb.services"
-    }],
     "scripts": {
         "lint": "phpcs src/ tests/",
         "lint-clean": "phpcbf src/ tests/"
