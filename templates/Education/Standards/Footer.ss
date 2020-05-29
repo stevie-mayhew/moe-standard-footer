@@ -11,7 +11,7 @@
 
                             <p class="social-links">
                                 <% loop $SocialMediaLinksFooter %>
-                                    <a href="$Link" title="$Title" target="_blank" class="$Type"><span>$Title</span></a>
+                                    <a href="$Link" title="$Title" target="_blank" class="$Type.LowerCase"><span>$Title</span></a>
                                 <% end_loop %>
 
                                 <% if $HasShield %>
@@ -48,7 +48,7 @@
                             <% if $SocialMediaLinksFooter.Exists %>
                                 <p class="social-links">
                                     <% loop $SocialMediaLinksFooter %>
-                                        <a href="$Link" title="$Title" target="_blank" class="$Type"><span>$Title</span></a>
+                                        <a href="$Link" title="$Title" target="_blank" class="$Type.LowerCase"><span>$Title</span></a>
                                     <% end_loop %>
 
                                     <% if $HasShield %>
