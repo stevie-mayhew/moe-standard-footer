@@ -26,6 +26,7 @@ class AbstractLinkObject extends DataObject
 
     private static $db = [
         'Title' => 'Varchar(255)',
+        'Icon' => 'Varchar(255)',
         'LinkTitle' => 'Varchar(255)',
         'ExternalLink' => 'Varchar(255)',
         'SortOrder' => 'Int',
@@ -65,6 +66,12 @@ class AbstractLinkObject extends DataObject
             $this->LinkTo = 'External';
         } else {
             $this->LinkTo = 'Internal';
+        }
+
+        $icon = $fields->dataFieldByName('Icon');
+
+        if ($icon) {
+            $icon->setDescription('Name of the font-awesome icon to use');
         }
 
         $fields->addFieldsToTab('Root.Main', [

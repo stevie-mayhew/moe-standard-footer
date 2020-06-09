@@ -80,7 +80,7 @@
 #page-foot .lower {
     min-height: 200px;
     padding: 40px 0;
-    background-color: #373535;
+    background-color: $color-charcoal-mid;
     font-size: 13px;
     color: #CCC;
 }
@@ -127,7 +127,7 @@
 }
 
 #page-foot .lower nav .social-links a {
-  color: #373535;
+  color: $color-charcoal-mid;
   text-decoration: none;
 
   &:hover,
@@ -277,11 +277,13 @@
       text-decoration: none;
   }
 
-  .social-links a.fb:hover, .social-links a.fb:focus {
+  .social-links a.fb:hover, .social-links a.fb:focus,
+  .social-links a.facebook:hover, .social-links a.facebook:focus, {
       background-color: #3b5998 !important;
   }
 
-  .social-links a.twtr:hover, .social-links a.twtr:focus {
+  .social-links a.twtr:hover, .social-links a.twtr:focus,
+  .social-links a.twitter:hover, .social-links a.twitter:focus {
       background-color: #32a7d3 !important;
   }
 
@@ -309,15 +311,18 @@
       background-color: #17aee1 !important;
   }
 
-  .social-links a.ytb:hover, .social-links a.ytb:focus {
+  .social-links a.ytb:hover, .social-links a.ytb:focus,
+  .social-links a.youtube:hover, .social-links a.youtube:focus {
       background-color: #cc181e !important;
   }
 
-  .social-links a.fb:before {
+  .social-links a.fb:before,
+  .social-links a.facebook:before {
       content: '\f09a';
   }
 
-  .social-links a.twtr:before {
+  .social-links a.twtr:before,
+  .social-links a.twitter:before {
       content: '\f099';
   }
 
@@ -345,7 +350,8 @@
       content: '\f194';
   }
 
-  .social-links a.ytb:before {
+  .social-links a.ytb:before,
+  .social-links a.youtube:before {
       content: '\f16a';
   }
 }

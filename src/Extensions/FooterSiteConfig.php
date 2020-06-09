@@ -1,6 +1,6 @@
 <?php
 
-namespace Education\StandardFooter\Extension;
+namespace Education\StandardFooter\Extensions;
 
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\ORM\DataExtension;
@@ -17,7 +17,6 @@ use SilverStripe\Core\Config\Config;
 use Page;
 use Education\StandardFooter\Model\EducationFooterLink;
 use Education\StandardFooter\Model\EducationSocialMediaLink;
-use SilverStripe\AssetAdmin\Forms\UploadField;
 
 class FooterSiteConfig extends DataExtension
 {

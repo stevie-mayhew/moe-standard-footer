@@ -4,4 +4,4 @@ After: '#framework'
 ---
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - Education\StandardFooter\Extension\FooterSiteConfig
+    - Education\StandardFooter\Extensions\FooterSiteConfig
