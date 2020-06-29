@@ -26,7 +26,7 @@
 
                 <div id="footer-news-links">
                     <% with $SiteConfig %>
-                        <h3>$UpperFooterLinkTitle</h3>
+                        <h3><% if UpperFooterLinkTitle %>$UpperFooterLinkTitle<% else %>&nbsp;<% end_if %></h3>
 
                         <ul>
                             <% loop $UpperFooterLinks %>
