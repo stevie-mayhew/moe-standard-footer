@@ -83,16 +83,19 @@
                         <% end_cached %>
                     </ul>
                 </nav>
-
-                <div class="ministry-links">
-                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education/standard-footer:client/img/footer-moe-logo.png)" alt="Ministry of Education." id="min-edu-logo"/></a></p>
-                </div> <!-- // end ministry-links \\ -->
             </div> <!-- // end inner \\ -->
 
             <div class="copyright-line">
-                <p><% if CopyrightPage %><a href="$CopyrightPage.Link"><% end_if %>Copyright © New Zealand Ministry of Education<% if CopyrightPage %></a><% end_if %>. <strong><a href="#top">Back to top</a></strong></p>
-                <p id="nz-govt-footer-link">
-                    <a href="https://www.govt.nz/"><img src="$resourceURL(education/standard-footer:client/img/footer-nz-govt-logo.png)" alt="www.govt.nz - connecting you to New Zealand central &amp; local government services" title="www.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
+                <div class="ministry-links">
+                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education/standard-footer:client/img/moe-logo.svg)" alt="Ministry of Education." id="min-edu-logo"/></a></p>
+                </div> <!-- // end ministry-links \\ -->
+
+                <div class="statement">
+                    <p><% if CopyrightPage %><a href="$CopyrightPage.Link"><% end_if %>© $Now.Year New Zealand Ministry of Education<% if CopyrightPage %></a><% end_if %></p>
+                </div>
+
+                <div id="nz-govt-footer-link">
+                    <p><a href="https://www.govt.nz/"><img src="$resourceURL(education/standard-footer:client/img/aog-logo.svg)" alt="www.govt.nz - connecting you to New Zealand central &amp; local government services" title="www.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
                 </p>
             </div>
         </div> <!-- // end wrapper \\ -->
