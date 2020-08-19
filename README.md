@@ -22,7 +22,26 @@ Your SCSS will also need to include the styles
 @import "../../vendor/education/standard-footer/client/scss/footer.scss"
 ```
 
-Then you'll be good to go. You can customize any of the colours, logos as you se fit.
+> :warning: ** In your SCSS make sure to include the root design system before `header.scss`
+
+In your theme SCSS:
+
+```css
+@import "../../vendor/education/silverstripe-ds/client/scss/moe.scss";
+@import "../../vendor/education/standard-footer/client/scss/footer.scss";
+```
+
+For customising any variables, define it prior to those imports.
+
+```css
+$color-footer-background: #f00;
+...
+@import "../../vendor/education/silverstripe-ds/client/scss/moe.scss";
+@import "../../vendor/education/standard-footer/client/scss/footer.scss";
+```
+
+Then you'll be good to go. You can customize any of the colours, logos as
+needed.
 
 ## Configuration
 
