@@ -9,7 +9,8 @@
         }
     },
     "require": {
-        "education/cwp-core": "^2"
+        "education/cwp-core": "^2",
+        "education/silverstripe-ds": "^1"
     },
     "extra": {
         "expose": [
