@@ -73,7 +73,7 @@ class FooterSiteConfig extends DataExtension
             GridField::create(
                 'SocialMediaLinks',
                 '',
-                $this->SocialMediaLinks(),
+                $this->owner->SocialMediaLinks(),
                 $config
             ),
             CheckboxField::create('HasShield')
