@@ -21,11 +21,14 @@ use Education\StandardFooter\Model\EducationSocialMediaLink;
 class FooterSiteConfig extends DataExtension
 {
     private static $db = [
-        'UpperFooterLinkTitle' => 'Varchar(255)'
+        'UpperFooterLinkTitle' => 'Varchar(255)',
+        'FooterBannerText' => 'Text',
+        'FooterBannerButtonText' => 'Varchar'
     ];
 
     private static $has_one = [
-        'FooterLogoLink' => Page::class
+        'FooterLogoLink' => Page::class,
+        'FooterBannerButton' => SiteTree::class
     ];
 
     private static $has_many = [
@@ -60,6 +63,9 @@ class FooterSiteConfig extends DataExtension
             ->addComponent(new GridFieldOrderableRows('SortOrder'));
 
         $fields->addFieldsToTab('Root.Footer', [
+            TextField::create('FooterBannerText'),
+            TextField::create('FooterBannerButtonText'),
+            TreeDropdownField::create('FooterBannerButtonID', 'Link', SiteTree::class),
             TreeDropdownField::create('FooterLogoLinkID', 'Logo link', SiteTree::class),
             LiteralField::create('Br', '<hr style="margin-bottom: 20px" />'), // needed to stop grid fields running into each other
             GridField::create('UpperLowerFooterLinks', 'UpperLower', $this->owner->UpperLowerFooterLinks(), $upperconfig),
