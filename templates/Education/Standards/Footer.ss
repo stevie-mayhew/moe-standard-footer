@@ -7,7 +7,7 @@
             <% end_if %>
 
             <% if $SiteConfig.FooterBannerButton %>
-                <a href="$SiteConfig.FooterBannerButton.Link" class="footer-ctabtn btn">$SiteConfig.FooterBannerButton.Title</a>
+                <a href="$SiteConfig.FooterBannerButton.Link" class="footer-ctabtn btn">$SiteConfig.FooterBannerButtonText</a>
             <% end_if %>
         </div>
     </div>
