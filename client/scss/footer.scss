@@ -6,8 +6,12 @@
   footer
   ==========================
 */
-#page-foot {
-  font-size: 16px;
+#footer {
+  @include font-small();
+
+  p {
+    @include font-xsmall();
+  }
 
   a {
     text-decoration: none;
@@ -20,217 +24,48 @@
   }
 
   li {
-    font-size: 15px;
+    font-size: $font-size-small;
   }
-}
 
-#page-foot .upper {
-  margin-top: 10px;
-  padding: 20px 0 50px 0;
-  background-color: #edede2;
-  color: #333333;
-}
+  .footer__upper {
+    margin-top: gap-size(1);
+    padding: gap-size(4) 0 gap-size(4) 0;
+    background-color: #edede2;
+    color: #333333;
 
-#page-foot .upper .inner > div {
-  float: left;
-  width: 24%;
-}
+    .footer__upper .inner > div {
+      float: left;
+      width: 24%;
+    }
 
-#page-foot #footer-news-links {
-  width: 74.66%;
-  margin-left: 1.333%;
-}
+    h3 {
+      @include font-body();
 
-#page-foot .upper h3 {
-  font-size: 18px;
-  margin-bottom: 14px;
-}
-
-#page-foot .upper p + p {
-  margin-top: 6px;
-}
-
-#footer-news-links ul {
-  list-style-type: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  -ms-column-count: 3;
-  column-count: 3;
-
-  -webkit-perspective: 1;
-}
-
-#footer-news-links ul li {
-  margin-bottom: 6px;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-  break-inside: avoid;
-  display: inline-block;
-  width: 100%;
-}
-
-/* lower area */
-/* ---------- */
-#page-foot .lower {
-  min-height: 200px;
-  padding: 40px 0;
-  background-color: $color-charcoal-mid;
-  font-size: 16px;
-  color: #fff;
-}
-
-#page-foot p {
-  font-size: 14px;
-  line-height: 20px;
-}
-
-#page-foot .lower .inner {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#page-foot .lower nav {
-  width: 100%;
-}
-
-#page-foot .lower nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-#page-foot .lower nav ul.alt {
-  margin-top: 10px;
-  display: flex;
-
-  @include breakpoint-md-down() {
-    flex-direction: column;
+      margin-bottom: gap-size(2);
+    }
   }
-}
 
-#page-foot .lower nav ul li {
-  display: inline-block;
-
-  @include breakpoint-md-down() {
-    margin-bottom: 1rem;
-  }
-}
-
-#page-foot .lower nav ul li + li:before {
-  // content: ' – ';
-  content: "  ";
-  margin: 0 8px;
-  opacity: 0.2;
-
-  @include breakpoint-md-down() {
-    display: none;
-  }
-}
-
-#page-foot .lower nav a {
-  color: #fff;
-  font-weight: bold;
-}
-
-#page-foot .lower nav .social-links a {
-  color: $color-charcoal-mid;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
+  .footer__lower {
+    padding: gap-size(10) 0;
+    background-color: $color-charcoal-mid;
     color: #fff;
-  }
-}
 
-#page-foot .lower .ministry-links {
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  text-align: right;
-  white-space: nowrap;
-  justify-content: flex-end;
-}
-
-#page-foot .lower .ministry-links > * {
-  display: block;
-  align-self: center;
-  justify-content: flex-end;
-}
-
-#page-foot .ministry-links > * + * {
-  margin-left: 30px;
-}
-
-#moe-footer-link,
-#moe-footer-link a {
-  width: 192px;
-  height: 62px;
-
-  img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-}
-
-#moe-footer-link img {
-  transition: 0.2s ease-out;
-  display: block;
-}
-
-#moe-footer-link a:hover img {
-  opacity: 0.8;
-}
-
-
-#nz-govt-footer-link,
-#nz-govt-footer-link a {
-  width: 220px;
-
-  img {
-    max-width: 100%;
-    transition: 0.2s ease-out;
-    display: block;
-  }
-}
-
-#nz-govt-footer-link a:hover img {
-  opacity: 0.8;
-}
-
-.copyright-line {
-  margin-top: 40px;
-  padding-top: 20px;
-  padding-bottom: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  @include breakpoint-md-down() {
-    flex-direction: column;
-    align-items: flex-start;
+    @include font-small();
   }
 
-  a {
-    color: inherit;
+  .footer__bottom {
+    background-color: $color-charcoal-mid;
+    color: #fff;
+
+    @include font-small();
   }
 
-  p {
-    margin: 0;
-  }
-}
-
-/* general social links styling */
-/* ---------------------------- */
-#page-foot {
   .statement {
     @include breakpoint-md-down() {
-      margin: 2rem 0;
+      margin: gap-size(8) 0 gap-size(16);
+      text-align: center;
+
+      @include font-xsmall();
     }
   }
 
@@ -238,7 +73,7 @@
     position: relative;
     display: inline-block;
     width: 100%;
-    padding: 8px 34px 8px 10px;
+    padding: gap-size(2, 1) 34px gap-size(2, 1) 10px;
     border: solid 1px #ccc;
     border-radius: 0.5rem;
     background-color: #fff;
@@ -392,8 +227,179 @@
   }
 }
 
+#footer #footer-news-links {
+  width: 74.66%;
+  margin-left: 1.333%;
+}
+
+#footer .footer__upper
+#footer .footer__upper p + p {
+  margin-top: gap-size(1);
+}
+
+#footer-news-links ul {
+  list-style-type: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  -ms-column-count: 3;
+  column-count: 3;
+  perspective: 1;
+}
+
+#footer-news-links ul li {
+  margin-bottom: gap-size(1);
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+}
+
+#footer .footer__lower .inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer .footer__lower nav {
+  width: 100%;
+}
+
+#footer .footer__lower nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#footer .footer__lower nav ul.alt {
+  margin-top: gap-size(2);
+  display: flex;
+
+  @include breakpoint-md-down() {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#footer .footer__lower nav ul li {
+  display: inline-block;
+
+  @include breakpoint-md-down() {
+    margin-bottom: 1rem;
+  }
+}
+
+#footer .footer__lower nav ul li + li:before {
+  // content: ' – ';
+  content: "  ";
+  margin: 0 8px;
+  opacity: 0.2;
+
+  @include breakpoint-md-down() {
+    display: none;
+  }
+}
+
+#footer .footer__lower nav a {
+  color: #fff;
+  font-weight: bold;
+}
+
+#footer .footer__lower nav .social-links a {
+  color: $color-charcoal-mid;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+  }
+}
+
+#footer .footer__lower .ministry-links {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  text-align: right;
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+
+#footer .footer__lower .ministry-links > * {
+  display: block;
+  align-self: center;
+  justify-content: flex-end;
+}
+
+#footer .ministry-links > * + * {
+  margin-left: 30px;
+}
+
+#moe-footer-link,
+#moe-footer-link a {
+  width: 192px;
+  height: 62px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+#moe-footer-link img {
+  transition: 0.2s ease-out;
+  display: block;
+}
+
+#moe-footer-link a:hover img {
+  opacity: 0.8;
+}
+
+
+#nz-govt-footer-link,
+#nz-govt-footer-link a {
+  width: 220px;
+
+  img {
+    max-width: 100%;
+    transition: 0.2s ease-out;
+    display: block;
+  }
+}
+
+#nz-govt-footer-link a:hover img {
+  opacity: 0.8;
+}
+
+.copyright-line {
+  padding-top: gap-size(8);
+  padding-bottom: gap-size(8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint-md-down() {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  p {
+    margin: 0;
+
+    @include font-xsmall();
+  }
+}
+
 .footer-cta {
-  padding: 2rem 0;
+  padding: gap-size(8) 0;
 
   .wrapper {
     display: flex;
@@ -402,20 +408,21 @@
 
     @include breakpoint-md-down() {
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
   }
 
   p {
-    font-weight: 800;
-    font-size: $font-size-ms;
-    letter-spacing: -1px;
-    line-height: 1.2;
+    @include font-medium();
+
+    font-weight: bold;
+    margin: 0;
     background-size: auto 52px;
 
     @include breakpoint-ml-up() {
-      font-size: $font-size-ml;
+      @include font-xmedium();
     }
   }
 
@@ -424,12 +431,13 @@
     text-transform: uppercase;
     border: 2px solid $color-blue;
     color: $color-white;
-    padding: 18px 20px;
+    padding: gap-size(4, 2) 20px;
     text-align: center;
     font-weight: bold;
     border-radius: 2px;
     text-decoration: none;
     font-size: 15px;
+    margin-left: 30px;
     line-height: 1;
     z-index: 1;
     overflow: hidden;
@@ -439,9 +447,9 @@
     transition: 0.16s all cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     @include breakpoint-md-down() {
-      padding-top: 0.5rem;
+      padding-top: gap-size(2, 2);
       margin: 0;
-      padding-bottom: 0.5rem;
+      padding-bottom: gap-size(2, 2);
       letter-spacing: -0.9px;
       font-weight: 600;
     }
@@ -501,6 +509,5 @@
         border-color: darken($color-blue, 19%);
       }
     }
-    margin-left: 40px;
   }
 }

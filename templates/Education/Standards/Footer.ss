@@ -13,50 +13,51 @@
     </div>
 <% end_if %>
 
-<footer id="page-foot" role="contentinfo">
+<footer id="footer" role="contentinfo">
     <% if SiteConfig.TopLinksEnabled && SiteConfig.SocialMediaLinksFooter.Exists %>
-    <div class="upper">
+    <div class="footer__upper">
         <div class="wrapper">
             <div class="inner cf">
                 <div>
                     <% with $SiteConfig %>
-                        <% if $SocialMediaLinksFooter.Exists %>
+                        <% if $SocialMediaLinksFooter %>
                             <h3>Connect with us</h3>
 
                             <p class="social-links">
                                 <% loop $SocialMediaLinksFooter %>
-                                    <a href="$Link" title="$Title" target="_blank" class="$Type.LowerCase"><span>$Title</span></a>
+                                    <a href="$Link" title="$Title" target="_blank" rel="noopener noreferrer" class="footer__social $Type.LowerCase"><span>$Title</span></a>
                                 <% end_loop %>
 
                                 <% if $HasShield %>
                                     <% include Education\Cwp\Includes\Shield %>
                                 <% end_if %>
                             </p>
-                        <% else %>
-                            <p class="social-links">&nbsp;</p>
                         <% end_if %>
                     <% end_with %>
                 </div>
 
-                <div id="footer-news-links">
-                    <% with $SiteConfig %>
-                        <h3><% if UpperFooterLinkTitle %>$UpperFooterLinkTitle<% else %>&nbsp;<% end_if %></h3>
+                <% if SiteConfig.UpperFooterLinks %>
+                    <div id="footer-news-links">
+                        <% with $SiteConfig %>
+                            <h3><% if UpperFooterLinkTitle %>$UpperFooterLinkTitle<% else %>&nbsp;<% end_if %></h3>
 
-                        <ul>
-                            <% loop $UpperFooterLinks %>
-                                <li><a href="$Link" class="link-button">$Title</a></li>
-                            <% end_loop %>
-                        </ul>
-                    <% end_with %>
-                </div>
-            </div> <!-- // end inner \\ -->
-        </div> <!-- // end wrapper \\ -->
-    </div> <!-- // end upper \\ -->
+                            <ul>
+                                <% loop $UpperFooterLinks %>
+                                    <li><a href="$Link" class="link-button">$Title</a></li>
+                                <% end_loop %>
+                            </ul>
+                        <% end_with %>
+                    </div>
+                <% end_if %> %>
+            </div>
+        </div>
+    </div>
     <% end_if %>
-    <div class="lower">
+
+    <div class="footer__lower">
         <div class="wrapper">
             <div class="inner">
-                <nav>
+                <nav id="footer__lower">
                     <% if not SiteConfig.TopLinksEnabled %>
                         <% with $SiteConfig %>
                             <% if $SocialMediaLinksFooter.Exists %>
@@ -69,8 +70,6 @@
                                         <% include Education\Cwp\Includes\Shield %>
                                     <% end_if %>
                                 </p>
-                            <% else %>
-                                <p class="social-links">&nbsp;</p>
                             <% end_if %>
                         <% end_with %>
                     <% end_if %>
@@ -97,11 +96,15 @@
                         <% end_cached %>
                     </ul>
                 </nav>
-            </div> <!-- // end inner \\ -->
+            </div>
+        </div>
+    </div>
 
+    <div class="footer__bottom">
+        <div class="wrapper">
             <div class="copyright-line">
                 <div class="ministry-links">
-                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education/standard-footer:client/img/moe-logo.svg)" alt="Ministry of Education." id="min-edu-logo"/></a></p>
+                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education/standard-footer:client/img/moe-logo.svg)" alt="Ministry of Education Logo" id="min-edu-logo"/></a></p>
                 </div> <!-- // end ministry-links \\ -->
 
                 <div class="statement">
@@ -109,10 +112,10 @@
                 </div>
 
                 <div id="nz-govt-footer-link">
-                    <p><a href="https://www.govt.nz/"><img src="$resourceURL(education/standard-footer:client/img/aog-logo.svg)" alt="www.govt.nz - connecting you to New Zealand central &amp; local government services" title="www.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
+                    <p><a href="https://www.govt.nz/" target='_blank' rel="noopener noreferrer"><img src="$resourceURL(education/standard-footer:client/img/aog-logo.svg)" alt="www.govt.nz - connecting you to New Zealand central &amp; local government services" title="www.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
                 </p>
             </div>
-        </div> <!-- // end wrapper \\ -->
-    </div> <!-- // end lower \\ -->
-</footer> <!-- // end page-foot \\ -->
+        </div>
+    </div>
+</footer>
 <% end_cached %>
