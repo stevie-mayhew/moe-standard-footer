@@ -297,7 +297,7 @@
 #footer .footer__lower nav ul li + li:before {
   // content: ' – ';
   content: "  ";
-  margin: 0 8px;
+  margin: 0 gap-size(2);
   opacity: 0.2;
 
   @include breakpoint-md-down() {

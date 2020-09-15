@@ -51,13 +51,16 @@ image above.
  - Upper Social Links (top left)
  - Upper Links (featured buttons top right)
  - Lower Links
+ - Social Media Icons
 
 If you want, you can opt for a compressed version (i.e disabling the top links)
-by using the following configuration option
+by using the following configuration options:
 
 ```
-Education\StandardFooter\Model\EducationFooterLink:
+Education\StandardFooter\Extensions\FooterSiteConfig:
   top_links_enabled: false
+  banner_enabled: true
+  social_media_enabled: false
 ```
 
 

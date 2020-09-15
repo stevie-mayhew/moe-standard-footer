@@ -8,18 +8,23 @@ use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TreeDropdownField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\Core\Config\Config;
 use Page;
-use Education\StandardFooter\Model\EducationFooterLink;
 use Education\StandardFooter\Model\EducationSocialMediaLink;
+use SilverStripe\Forms\Tab;
 
 class FooterSiteConfig extends DataExtension
 {
+    private static $banner_enabled = true;
+
+    private static $top_links_enabled = false;
+
+    private static $social_media_enabled = true;
+
     private static $db = [
         'UpperFooterLinkTitle' => 'Varchar(255)',
         'FooterBannerText' => 'Text',
@@ -49,49 +54,69 @@ class FooterSiteConfig extends DataExtension
             $delete->setRemoveRelation(false);
         }
 
-        if ($this->owner->getTopLinksEnabled()) {
+        $fields->addFieldsToTab('Root.Footer', [
+            TreeDropdownField::create('FooterLogoLinkID', 'Logo link', SiteTree::class),
+            GridField::create('LowerFooterLinks', 'Links', $this->owner->LowerFooterLinks(), $config)
+        ]);
+
+
+        if ($this->owner->getFooterBannerEnabled()) {
+            $fields->addFieldToTab('Root.Footer', new Tab('Banner', 'Banner',
+                TextField::create('FooterBannerText'),
+                TextField::create('FooterBannerButtonText'),
+                TreeDropdownField::create('FooterBannerButtonID', 'Link', SiteTree::class)
+            ));
+        }
+
+        if ($this->owner->getFooterTopLinksEnabled()) {
+            $upperconfig = GridFieldConfig_RecordEditor::create()
+                ->addComponent(new GridFieldOrderableRows('SortOrder'));
+
             $fields->addFieldsToTab('Root.Footer', [
                 TextField::create('UpperFooterLinkTitle', 'Header for links in upper footer'),
-                GridField::create('UpperFooterLinks', 'Upper', $this->owner->UpperFooterLinks(), $config)
+                GridField::create('UpperFooterLinks', 'Upper', $this->owner->UpperFooterLinks(), $config),
+                GridField::create('UpperLowerFooterLinks', 'Middle links', $this->owner->UpperLowerFooterLinks(), $upperconfig),
             ]);
         }
 
-        $upperconfig = GridFieldConfig_RecordEditor::create()
-            ->addComponent(new GridFieldOrderableRows('SortOrder'));
+        if ($this->owner->getFooterSocialMediaEnabled()) {
+            $config = GridFieldConfig_RecordEditor::create()
+                ->addComponent(new GridFieldOrderableRows('SortOrder'));
 
-        $config = GridFieldConfig_RecordEditor::create()
-            ->addComponent(new GridFieldOrderableRows('SortOrder'));
-
-        $fields->addFieldsToTab('Root.Footer', [
-            TextField::create('FooterBannerText'),
-            TextField::create('FooterBannerButtonText'),
-            TreeDropdownField::create('FooterBannerButtonID', 'Link', SiteTree::class),
-            TreeDropdownField::create('FooterLogoLinkID', 'Logo link', SiteTree::class),
-            LiteralField::create('Br', '<hr style="margin-bottom: 20px" />'), // needed to stop grid fields running into each other
-            GridField::create('UpperLowerFooterLinks', 'UpperLower', $this->owner->UpperLowerFooterLinks(), $upperconfig),
-            GridField::create('LowerFooterLinks', 'Lower', $this->owner->LowerFooterLinks(), $config)
-        ]);
-
-        $config = GridFieldConfig_RecordEditor::create()
-            ->addComponent(new GridFieldOrderableRows('SortOrder'));
-
-        $fields->addFieldsToTab('Root.SocialMedia', [
-            GridField::create(
-                'SocialMediaLinks',
-                '',
-                $this->owner->SocialMediaLinks(),
-                $config
-            ),
-            CheckboxField::create('HasShield')
-        ]);
+            $fields->addFieldsToTab('Root.SocialMedia', [
+                GridField::create(
+                    'SocialMediaLinks',
+                    '',
+                    $this->owner->SocialMediaLinks(),
+                    $config
+                ),
+                CheckboxField::create('HasShield')
+            ]);
+        }
     }
 
     /**
      * @return boolean
      */
-    public function getTopLinksEnabled()
+    public function getFooterTopLinksEnabled()
     {
-        return Config::inst()->get(EducationFooterLink::class, 'top_links_enabled');
+        return Config::inst()->get(FooterSiteConfig::class, 'top_links_enabled');
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getFooterBannerEnabled()
+    {
+        return Config::inst()->get(FooterSiteConfig::class, 'banner_enabled');
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getFooterSocialMediaEnabled()
+    {
+        return Config::inst()->get(FooterSiteConfig::class, 'social_media_enabled');
     }
 
     /**
