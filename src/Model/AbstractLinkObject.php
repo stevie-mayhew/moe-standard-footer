@@ -10,7 +10,7 @@ use SilverStripe\Control\Director;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\SiteConfig\SiteConfig;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
-use Education\Cwp\Extension\SiteConfigableObjectExtension;
+use Education\Cwp\Extensions\SiteConfigableObjectExtension;
 use SilverStripe\ORM\FieldType\DBField;
 
 /**
@@ -54,6 +54,7 @@ class AbstractLinkObject extends DataObject
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
+
         $fields->removeFieldsFromTab('Root.Main', [
             'SiteConfigID',
             'SortOrder',
