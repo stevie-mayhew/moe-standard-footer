@@ -10,7 +10,7 @@ use SilverStripe\Control\Director;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\SiteConfig\SiteConfig;
 use UncleCheese\DisplayLogic\Forms\Wrapper;
-use Education\Cwp\Extensions\SiteConfigableObjectExtension;
+use Education\Cwp\Extension\SiteConfigableObjectExtension;
 use SilverStripe\ORM\FieldType\DBField;
 
 /**
