@@ -420,10 +420,12 @@
     @include font-medium();
 
     font-weight: bold;
-    margin: 0;
+    margin: 0 0 gap-size(2);
     background-size: auto 52px;
 
     @include breakpoint-ml-up() {
+      margin: 0;
+
       @include font-xmedium();
     }
   }
