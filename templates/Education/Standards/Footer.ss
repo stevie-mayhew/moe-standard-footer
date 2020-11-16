@@ -1,3 +1,4 @@
+<footer>
 <% cached 'footer', $SiteConfig.ID, $List('Education\StandardFooter\Model\AbstractLinkObject').max('LastEdited'), $List('SilverStripe\SiteConfig\SiteConfig').max('LastEdited'), $List('SilverStripe\CMS\Model\SiteTree').max('LastEdited'), $List('SilverStripe\CMS\Model\SiteTree').count() %>
 <% if SiteConfig.FooterBannerButton || SiteConfig.FooterBannerText %>
     <div class="footer-cta">
@@ -6,14 +7,14 @@
                 <p>$SiteConfig.FooterBannerText</p>
             <% end_if %>
 
-            <% if $SiteConfig.FooterBannerButton %>
+            <% if $SiteConfig.FooterBannerButton && $SiteConfig.FooterBannerButtonText %>
                 <a href="$SiteConfig.FooterBannerButton.Link" class="footer-ctabtn btn">$SiteConfig.FooterBannerButtonText</a>
             <% end_if %>
         </div>
     </div>
 <% end_if %>
 
-<footer id="footer" role="contentinfo">
+<div id="footer">
     <% if SiteConfig.FooterTopLinksEnabled && SiteConfig.FooterSocialMediaEnabled %>
     <div class="footer__upper">
         <div class="wrapper">
@@ -119,5 +120,6 @@
             </div>
         </div>
     </div>
-</footer>
+</div>
 <% end_cached %>
+</footer>
