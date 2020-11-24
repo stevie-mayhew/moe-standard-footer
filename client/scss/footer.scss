@@ -7,7 +7,7 @@
   ==========================
 */
 #footer {
-  background-color: $color-charcoal-mid;
+  background-color: $color-grey-800;
 
   @include font-small();
 
@@ -49,14 +49,14 @@
 
   .footer__lower {
     padding: gap-size(10) 0;
-    background-color: $color-charcoal-mid;
+    background-color: $color-grey-800;
     color: #fff;
 
     @include font-small();
   }
 
   .footer__bottom {
-    background-color: $color-charcoal-mid;
+    background-color: $color-grey-800;
     color: #fff;
 
     @include font-small();
@@ -313,7 +313,7 @@
 }
 
 #footer .footer__lower nav .social-links a {
-  color: $color-charcoal-mid;
+  color: $color-grey-800;
   text-decoration: none;
 
   &:hover,
