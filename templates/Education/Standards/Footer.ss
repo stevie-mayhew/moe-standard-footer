@@ -7,8 +7,8 @@
                 <p>$SiteConfig.FooterBannerText</p>
             <% end_if %>
 
-            <% if $SiteConfig.FooterBannerButton && $SiteConfig.FooterBannerButtonText %>
-                <a href="$SiteConfig.FooterBannerButton.Link" class="footer-ctabtn btn">$SiteConfig.FooterBannerButtonText</a>
+            <% if $SiteConfig.FooterBannerLink && $SiteConfig.FooterBannerButtonText %>
+                <a href="$SiteConfig.FooterBannerLink" class="footer-ctabtn btn">$SiteConfig.FooterBannerButtonText</a>
             <% end_if %>
         </div>
     </div>

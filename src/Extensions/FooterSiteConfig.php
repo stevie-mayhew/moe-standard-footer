@@ -137,4 +137,23 @@ class FooterSiteConfig extends DataExtension
             ->filter('ShowInFooter', true)
             ->sort('SortOrder');
     }
+
+    /**
+     * Returns the link for the footer banner. Use `updateFooterBannerLink` to
+     * filter or modify the link value.
+     *
+     * @return string
+     */
+    public function getFooterBannerLink()
+    {
+        $linkedPage = $this->owner->FooterBannerButton();
+
+        if ($linkedPage && $linkedPage->exists()) {
+            $link = $linkedPage->AbsoluteLink();
+
+            $this->owner->extend('updateFooterBannerLink', $link);
+
+            return $link;
+        }
+    }
 }
