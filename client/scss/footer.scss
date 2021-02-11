@@ -233,9 +233,22 @@ html {
   }
 }
 
+#footer #footer-social-links {
+  float: left;
+  width: 24%;
+  margin-right: 1.333%;
+
+  @include breakpoint-md-down {
+    float: none;
+    width: auto;
+    margin-right: 0;
+    padding-bottom: 2rem;
+  }
+}
+
 #footer #footer-news-links {
   width: 74.66%;
-  margin-left: 1.333%;
+  float: left;
 }
 
 #footer .footer__upper
