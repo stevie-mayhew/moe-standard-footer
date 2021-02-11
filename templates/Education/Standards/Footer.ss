@@ -1,4 +1,3 @@
-<footer>
 <% cached 'footer', $SiteConfig.ID, $List('Education\StandardFooter\Model\AbstractLinkObject').max('LastEdited'), $List('SilverStripe\SiteConfig\SiteConfig').max('LastEdited'), $List('SilverStripe\CMS\Model\SiteTree').max('LastEdited'), $List('SilverStripe\CMS\Model\SiteTree').count() %>
 <% if SiteConfig.FooterBannerButton || SiteConfig.FooterBannerText %>
     <div class="footer-cta">
@@ -7,22 +6,22 @@
                 <p>$SiteConfig.FooterBannerText</p>
             <% end_if %>
 
-            <% if $SiteConfig.FooterBannerLink && $SiteConfig.FooterBannerButtonText %>
-                <a href="$SiteConfig.FooterBannerLink" class="footer-ctabtn btn">$SiteConfig.FooterBannerButtonText</a>
+            <% if $SiteConfig.FooterBannerButton && SiteConfig.FooterBannerButtonText %>
+                <a href="$SiteConfig.FooterBannerButton.Link" class="footer-ctabtn btn">$SiteConfig.FooterBannerButtonText</a>
             <% end_if %>
         </div>
     </div>
 <% end_if %>
 
-<div id="footer">
+<footer id="footer" role="contentinfo">
     <% if SiteConfig.FooterTopLinksEnabled && SiteConfig.FooterSocialMediaEnabled %>
     <div class="footer__upper">
         <div class="wrapper">
             <div class="inner cf">
-                <div>
-                    <% with $SiteConfig %>
-                        <% if FooterSocialMediaEnabled %>
-                            <% if $SocialMediaLinksFooter %>
+                <% with $SiteConfig %>
+                    <% if FooterSocialMediaEnabled %>
+                        <% if $SocialMediaLinksFooter %>
+                            <div id="footer-social-links">
                                 <h3>Connect with us</h3>
 
                                 <p class="social-links">
@@ -34,10 +33,10 @@
                                         <% include Education\Cwp\Includes\Shield %>
                                     <% end_if %>
                                 </p>
-                            <% end_if %>
+                            </div>
                         <% end_if %>
-                    <% end_with %>
-                </div>
+                    <% end_if %>
+                <% end_with %>
 
                 <% if SiteConfig.UpperFooterLinks %>
                     <div id="footer-news-links">
@@ -53,7 +52,7 @@
                             <% end_if %>
                         <% end_with %>
                     </div>
-                <% end_if %> %>
+                <% end_if %>
             </div>
         </div>
     </div>
@@ -120,6 +119,5 @@
             </div>
         </div>
     </div>
-</div>
-<% end_cached %>
 </footer>
+<% end_cached %>
