@@ -298,6 +298,7 @@ html {
 #footer .footer__lower nav ul.alt {
   margin-top: gap-size(2);
   display: flex;
+  flex-wrap: wrap;
 
   @include breakpoint-md-down() {
     flex-direction: column;
