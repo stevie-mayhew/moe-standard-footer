@@ -249,6 +249,11 @@ html {
 #footer #footer-news-links {
   width: 74.66%;
   float: left;
+
+  @include breakpoint-md-down {
+    width: 100%;
+    float: none;
+  }
 }
 
 #footer .footer__upper
@@ -261,12 +266,12 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-
-  -webkit-column-count: 3;
-  -moz-column-count: 3;
-  -ms-column-count: 3;
   column-count: 3;
   perspective: 1;
+
+  @include breakpoint-md-down {
+    column-count: 1;
+  }
 }
 
 #footer-news-links ul li {
@@ -310,6 +315,7 @@ html {
   display: inline-block;
 
   @include breakpoint-md-down() {
+    display: block;
     margin-bottom: 1rem;
   }
 }
