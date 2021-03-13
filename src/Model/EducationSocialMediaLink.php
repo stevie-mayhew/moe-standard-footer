@@ -36,7 +36,6 @@ class EducationSocialMediaLink extends AbstractLinkObject
             DropdownField::create('Type', 'Icon type')
                 ->setSource([
                     'fb' => 'Facebook',
-                    'ggplus' => 'Google+',
                     'lkin' => 'LinkedIn',
                     'rss' => 'RSS',
                     'twtr' => 'Twitter',
