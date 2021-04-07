@@ -19,7 +19,7 @@ In your template use the include as follows
 Your SCSS will also need to include the styles
 
 ```
-@import "../../../vendor/education/standard-footer/client/scss/footer.scss";
+@import "../../../vendor/education-nz/moe-standard-footer/client/scss/footer.scss";
 ```
 
 > :warning: ** In your SCSS make sure to include the root design system before `header.scss`
@@ -27,8 +27,8 @@ Your SCSS will also need to include the styles
 In your theme SCSS:
 
 ```css
-@import "../../../vendor/education/silverstripe-ds/client/scss/moe.scss";
-@import "../../../vendor/education/standard-footer/client/scss/footer.scss";
+@import "../../../vendor/education-nz/moe-design-system/client/scss/moe.scss";
+@import "../../../vendor/education-nz/moe-standard-footer/client/scss/footer.scss";
 ```
 
 For customising any variables, define it prior to those imports.
@@ -36,8 +36,8 @@ For customising any variables, define it prior to those imports.
 ```css
 $color-footer-background: #f00;
 ...
-@import "../../../vendor/education/silverstripe-ds/client/scss/moe.scss";
-@import "../../../vendor/education/standard-footer/client/scss/footer.scss";
+@import "../../../vendor/education-nz/moe-design-system/client/scss/moe.scss";
+@import "../../../vendor/education-nz/moe-standard-footer/client/scss/footer.scss";
 ```
 
 Then you'll be good to go. You can customize any of the colours, logos as

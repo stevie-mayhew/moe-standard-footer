@@ -106,7 +106,7 @@
         <div class="wrapper">
             <div class="copyright-line">
                 <div class="ministry-links">
-                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education/standard-footer:client/img/moe-logo.svg)" alt="Ministry of Education Logo" id="min-edu-logo"/></a></p>
+                    <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education-nz/moe-standard-footer:client/img/moe-logo.svg)" alt="Ministry of Education Logo" id="min-edu-logo"/></a></p>
                 </div> <!-- // end ministry-links \\ -->
 
                 <div class="statement">
@@ -114,7 +114,7 @@
                 </div>
 
                 <div id="nz-govt-footer-link">
-                    <p><a href="https://www.govt.nz/" target='_blank' rel="noopener noreferrer"><img src="$resourceURL(education/standard-footer:client/img/aog-logo.svg)" alt="www.govt.nz - connecting you to New Zealand central &amp; local government services" title="www.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
+                    <p><a href="https://www.govt.nz/" target='_blank' rel="noopener noreferrer"><img src="$resourceURL(education-ed/moe-standard-footer:client/img/aog-logo.svg)" alt="www.govt.nz - connecting you to New Zealand central &amp; local government services" title="www.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
                 </p>
             </div>
         </div>
