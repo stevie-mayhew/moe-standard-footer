@@ -1,5 +1,5 @@
 {
-    "name": "education-nz/silverstripe-standard-footer",
+    "name": "education-nz/moe-standard-footer",
     "description": "Common footer styles for education.govt.nz",
     "type": "silverstripe-vendormodule",
     "autoload": {
@@ -9,8 +9,8 @@
         }
     },
     "require": {
-        "education-nz/cwp-core": "^2",
-        "education-nz/silverstripe-ds": "^1"
+        "education-nz/silverstripe-core": "^2",
+        "education-nz/moe-design-system": "^1"
     },
     "extra": {
         "expose": [
