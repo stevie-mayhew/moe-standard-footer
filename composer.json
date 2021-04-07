@@ -2,6 +2,7 @@
     "name": "education-nz/moe-standard-footer",
     "description": "Common footer styles for education.govt.nz",
     "type": "silverstripe-vendormodule",
+    "license": "BSD-3-Clause",
     "autoload": {
         "psr-4": {
             "Education\\StandardFooter\\": "src/",
