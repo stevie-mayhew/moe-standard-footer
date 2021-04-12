@@ -490,8 +490,8 @@ html {
       }
 
       &:before {
-        content: "\a0\f08e";
-        font-family: "FontAwesome";
+        content: "\f35d";
+        @include fa-free();
         font-size: 15px;
         position: absolute;
         top: 50%;
