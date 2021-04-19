@@ -1,6 +1,6 @@
 <% cached 'footer', $SiteConfig.ID, $List('Education\StandardFooter\Model\AbstractLinkObject').max('LastEdited'), $List('SilverStripe\SiteConfig\SiteConfig').max('LastEdited'), $List('SilverStripe\CMS\Model\SiteTree').max('LastEdited'), $List('SilverStripe\CMS\Model\SiteTree').count() %>
 <% if SiteConfig.FooterBannerButton || SiteConfig.FooterBannerText %>
-    <div class="footer-cta">
+    <div class="footer-cta no-print">
         <div class="wrapper">
             <% if SiteConfig.FooterBannerText %>
                 <p>$SiteConfig.FooterBannerText</p>
@@ -15,7 +15,7 @@
 
 <footer id="footer" role="contentinfo">
     <% if SiteConfig.FooterTopLinksEnabled && SiteConfig.FooterSocialMediaEnabled %>
-    <div class="footer__upper">
+    <div class="footer__upper no-print">
         <div class="wrapper">
             <div class="inner cf">
                 <% with $SiteConfig %>
@@ -58,7 +58,7 @@
     </div>
     <% end_if %>
 
-    <div class="footer__lower">
+    <div class="footer__lower no-print">
         <div class="wrapper">
             <div class="inner">
                 <nav id="footer__lower">
@@ -105,7 +105,7 @@
     <div class="footer__bottom">
         <div class="wrapper">
             <div class="copyright-line">
-                <div class="ministry-links">
+                <div class="ministry-links no-print">
                     <p id="moe-footer-link"><% with $SiteConfig %><a href="$FooterLogoLink.Link"><% end_with %><img src="$resourceURL(education-nz/moe-standard-footer:client/img/moe-logo.svg)" alt="Ministry of Education Logo" id="min-edu-logo"/></a></p>
                 </div> <!-- // end ministry-links \\ -->
 
@@ -113,7 +113,7 @@
                     <p>© $Now.Year New Zealand Ministry of Education</p>
                 </div>
 
-                <div id="nz-govt-footer-link">
+                <div id="nz-govt-footer-link" class="no-print">
                     <p><a href="https://www.govt.nz/" target='_blank' rel="noopener noreferrer"><img src="$resourceURL(education-nz/moe-standard-footer:client/img/aog-logo.svg)" alt="www.govt.nz - connecting you to New Zealand central &amp; local government services" title="www.govt.nz - connecting you to New Zealand central &amp; local government services"/></a>
                 </p>
             </div>

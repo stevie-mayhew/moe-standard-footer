@@ -516,3 +516,10 @@ html {
     }
   }
 }
+
+@media print {
+  #footer .footer__bottom {
+    background-color: #fff;
+    color: $color-grey-800;
+  }
+}
