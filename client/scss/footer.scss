@@ -117,10 +117,6 @@ html {
     color: #666666;
     text-align: center;
     text-decoration: none;
-
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
     transition: all 0.3s;
   }
 
@@ -131,9 +127,10 @@ html {
   .social-links a:before {
     content: "";
     display: inline;
-    font-family: "Font Awesome 5 Brands";
     font-size: 24px;
     line-height: 1.66;
+
+    @include fa-brands();
   }
 
   .social-links a:hover,
@@ -195,7 +192,7 @@ html {
 
   .social-links a.fb:before,
   .social-links a.facebook:before {
-    content: "\f09a";
+    content: "\f39e";
   }
 
   .social-links a.twtr:before,
@@ -208,15 +205,11 @@ html {
   }
 
   .social-links a.lkin:before {
-    content: "\f0e1";
-  }
-
-  .social-links a.ggplus:before {
-    content: "\f0d5";
+    content: "\f08c";
   }
 
   .social-links a.pint:before {
-    content: "\f0d2";
+    content: "\f231";
   }
 
   .social-links a.email:before {
@@ -224,12 +217,12 @@ html {
   }
 
   .social-links a.vmo:before {
-    content: "\f194";
+    content: "\f27d";
   }
 
   .social-links a.ytb:before,
   .social-links a.youtube:before {
-    content: "\f16a";
+    content: "\f167";
   }
 }
 
